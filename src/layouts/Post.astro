@@ -1,0 +1,13 @@
+---
+import Main from "./Main.astro";
+import "../scss/article.scss";
+
+const { frontmatter } = Astro.props;
+---
+
+<Main title={frontmatter.title ? frontmatter.title : ""}>
+  {frontmatter.title ? <h1>{frontmatter.title}</h1> : ""}
+  <article>
+    <slot />
+  </article>
+</Main>

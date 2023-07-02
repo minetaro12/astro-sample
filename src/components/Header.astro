@@ -1,0 +1,30 @@
+---
+import config from "../config";
+---
+<header>
+  <h1>{config.title}</h1>
+  <nav>
+    <ul>
+      {config.links.map((link) => (
+        <li>
+          <a href={link.path} class:list={[{now: Astro.url.pathname === link.path}]}>{link.name}</a>
+        </li>
+      ))}
+      {config.extLinks.map((link) => (
+        <li>
+          <a href={link.path} target="_blank" rel="noopener noreferrer">{link.name}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<style lang="scss">
+  a {
+    color: blue;
+  }
+
+  .now {
+    color: red;
+  }
+</style>

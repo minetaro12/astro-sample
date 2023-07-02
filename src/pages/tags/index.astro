@@ -1,0 +1,16 @@
+---
+import Main from "@layouts/Main.astro";
+const posts = await Astro.glob("../posts/**/*.md");
+const tags = [...new Set(posts.map((post) => post.frontmatter.tags).flat())]
+tags.sort()
+---
+<Main title="Tags">
+  <h1>Tags</h1>
+  <ul>
+    {tags.map((tag) => (
+      <li>
+        <a href={`${tag}/`}>{tag}</a>
+      </li>
+    ))}
+  </ul>
+</Main>

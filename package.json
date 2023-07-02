@@ -1,0 +1,17 @@
+{
+  "name": "astro-sample",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^2.7.2",
+    "moment": "^2.29.4",
+    "sass": "^1.63.6"
+  }
+}
